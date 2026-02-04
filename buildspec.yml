@@ -2,6 +2,8 @@ version: 0.2
 
 env:
   variables:
+    DOCKERHUB_USERNAME: "krantidhondi"
+    DOCKERHUB_PASSWORD: "dckr_pat_I6kNbYXDPrp6pAF_kY7R90VJ2dI"
     AWS_ACCOUNT_ID: "315780191744"
     REPOSITORY_NAME: "website1"
     CONTAINER_NAME: "websitecont"
@@ -11,6 +13,8 @@ env:
 phases:
   pre_build:
     commands:
+      - echo Logging in to Docker Hub
+      - echo $DOCKERHUB_PASSWORD | docker login --username $DOCKERHUB_USERNAME --password-stdin
       - echo Logging in to Amazon ECR...
       - aws ecr get-login-password --region $AWS_DEFAULT_REGION | docker login --username AWS --password-stdin $AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com
       - REPOSITORY_URI=$AWS_ACCOUNT_ID.dkr.ecr.$AWS_DEFAULT_REGION.amazonaws.com/$REPOSITORY_NAME
