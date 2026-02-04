@@ -3,7 +3,7 @@ version: 0.2
 env:
   variables:
     DOCKERHUB_USERNAME: "krantidhondi"
-    DOCKERHUB_PASSWORD: "dckr_pat_I6kNbYXDPrp6pAF_kY7R90VJ2dI"
+    DOCKERHUB_PASSWORD: "dckr_pat_Mn4BdHqyCzbJYplyTzz4hn2sl0Y"
     AWS_ACCOUNT_ID: "315780191744"
     REPOSITORY_NAME: "website1"
     CONTAINER_NAME: "websitecont"
